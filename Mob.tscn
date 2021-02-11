@@ -10,15 +10,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "fly",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "walk",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "fly",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 6 ) ],
 "loop": true,
@@ -30,7 +30,9 @@ animations = [ {
 radius = 35.54
 height = 28.2829
 
-[node name="Mob" type="RigidBody2D"]
+[node name="Mob" type="RigidBody2D" groups=[
+"mobs",
+]]
 position = Vector2( 0.851273, 0 )
 collision_mask = 0
 gravity_scale = 0.0
@@ -43,6 +45,7 @@ __meta__ = {
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 1 )
 animation = "walk"
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
